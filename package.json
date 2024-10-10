@@ -1,0 +1,16 @@
+{
+  "name": "atividade-rapper",
+  "version": "1.0.0",
+  "description": "Projeto em Javascript para um sistema de cadastro",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "SENAI",
+    "FBI",
+    "dev"
+  ],
+  "author": "Isabella Borin",
+  "license": "MIT"
+}
