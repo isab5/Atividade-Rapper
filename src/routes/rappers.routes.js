@@ -57,4 +57,18 @@ rappersRoutes.post("/", (req, res) => {
 });
 
 
+rappersRoutes.get("/:id", (req, res) => {
+    const { id } = req.params;
+
+    const rapper = rappers.find((musico) => musico.id == id);
+
+    if (!rapper) {
+return res
+        .status(404)
+        .json({ message: `Suspeito com id ${id} não encontrado!` });
+    }
+
+    return res.status(200).json(rapper);
+});
+
 export default rappersRoutes;
