@@ -71,4 +71,35 @@ return res
     return res.status(200).json(rapper);
 });
 
+rappersRoutes.put("/:id", (req, res) => {
+    const { id } = req.params;
+    const { nome, idade, descricaoFisica, envolvimento } = req.body;
+    
+    const rapper = rappers.find((r) => r.id == id);
+
+    console.log(Number.isInteger(idade));
+
+    if (!nome) {
+    return res.status(400).json({
+        message: "O campo nome é obrigatório!",
+    });
+    }
+
+    if (envolvimento != 'sim' && envolvimento != 'não') {
+    return res.status(400).send({
+        message: "Digite 'sim' ou 'não'",
+    });
+    }
+    
+    rapper.nome = nome;
+    rapper.idade = idade;
+    rapper.descricaoFisica = descricaoFisica;
+    rapper.envolvimento = envolvimento;
+    
+    return res.status(200).json({
+        message: "Cadastro atualizado com sucesso!",
+        rapper,
+    });
+});
+
 export default rappersRoutes;
