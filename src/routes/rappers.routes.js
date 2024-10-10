@@ -10,6 +10,13 @@ let rappers = [
     descricaoFisica: "Alto, negro, dread/crespo",
     suspeito: true,
 },
+{
+    id: Math.floor(Math.random() * 1000),
+    nome: "Marshall Bruce Mathers III",
+    idade: 51,
+    descricaoFisica: "Branco, barba, cabelo preto, estatura média",
+    suspeito: false,
+},
 ];
 
 rappersRoutes.get("/", (req, res) => {
