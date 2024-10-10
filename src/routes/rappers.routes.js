@@ -102,4 +102,23 @@ rappersRoutes.put("/:id", (req, res) => {
     });
 });
 
+rappersRoutes.delete("/:id", (req, res) => {
+    const { id } = req.params;
+
+    const rapper = rappers.find((musician) => musician.id == id);
+
+    if (!rapper) {
+    return res
+        .status(404)
+        .json({ message: `Suspeito com id ${id} não encontrado!` });
+    }
+
+    rappers = rappers.filter((musician) => musician.id != id);
+
+    return res.status(200).json({
+    message: "Cadastro removido com sucesso!",
+    rapper,
+    });
+});
+
 export default rappersRoutes;
